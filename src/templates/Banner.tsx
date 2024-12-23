@@ -21,7 +21,7 @@ const Banner = () => (
 
   <Section yPadding="pt-00 pb-20">
     <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-      <div align="center">
+      <div>
         <ms-store-badge
           productid="9NLWCWNH9WHL"
           theme="auto"
