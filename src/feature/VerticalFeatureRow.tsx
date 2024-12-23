@@ -22,7 +22,7 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
     },
   );
 
-  const router = useRouter();
+
 
   return (
     <div className={verticalFeatureClass}>
@@ -32,17 +32,16 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
       </div>
 
       {/*
-      <div className="w-full p-6 sm:w-1/2">
-        <img src={`${router.basePath}${props.image}`} alt={props.imageAlt} />
-      </div>
-      -->
+          const router = useRouter();
+          <div className="w-full p-6 sm:w-1/2">
+            <img src={`${router.basePath}${props.image}`} alt={props.imageAlt} />
+          </div>
       */}
       <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
           <iframe
             style={{border: "5px solid pink"}}
             width="384"
             height="216"
-            frameborder="4"
             src={`https://www.youtube.com/embed/${props.youtubeid}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >

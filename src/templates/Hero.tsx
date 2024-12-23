@@ -31,7 +31,7 @@ const Hero = () => (
             <span className="text-pink-400">Video Downloader</span>
           </>
         }
-        description="Download selected videos or all videos on a web page. Works on almost any website."
+        description="Download selected videos or all videos on a web page.  Works on almost any website."
         button={
           <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">
             <Button xl>Microsoft Store Reviews</Button>
@@ -42,7 +42,7 @@ const Hero = () => (
 
     <Section yPadding="pt-00 pb-20">
         <div align="center">
-        <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+        <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js" async></script>
         <ms-store-badge
           productid="9NLWCWNH9WHL"
           theme="auto"
