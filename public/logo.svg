@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="400"
+   viewBox="0 0 105.83334 105.83333"
+   version="1.1"
+   id="svg4538"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="E:\src\youmacro_desktop\images\test.png"
+   inkscape:export-xdpi="61.439999"
+   inkscape:export-ydpi="61.439999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs4532" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#fbfbfb"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="-112"
+     inkscape:cy="244.5"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer6"
+     showgrid="true"
+     inkscape:snap-nodes="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-to-guides="true"
+     showguides="true"
+     inkscape:window-width="2103"
+     inkscape:window-height="1325"
+     inkscape:window-x="194"
+     inkscape:window-y="84"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="0"
+     units="px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4546"
+       originx="-34.999848"
+       originy="-26.999855" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4535">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-34.999847,-26.999854)">
+    <path
+       id="path5892"
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 61.799316,57.325193 A 19.999944,19.999866 0 0 0 42.518324,77.788028 19.999944,19.999866 0 0 0 62.648361,97.304666 v 0.0078 h 49.999529 v -0.0078 a 19.999944,19.999866 0 0 0 0.10284,0.0062 19.999944,19.999866 0 0 0 19.7621,-19.998264 l -0.0227,-0.951362 A 19.999944,19.999866 0 0 0 111.79938,57.325183 19.999944,19.999866 0 0 0 92.518382,77.788018 19.999944,19.999866 0 0 0 95.249999,87.312499 H 79.784783 A 19.999944,19.999866 0 0 0 82.51278,77.312593 L 82.49005,76.361231 A 19.999944,19.999866 0 0 0 61.799316,57.325193 Z m 0.713137,9.986989 A 9.9999989,9.9999989 0 0 1 72.512874,77.312604 9.9999989,9.9999989 0 0 1 62.512453,87.31251 9.9999989,9.9999989 0 0 1 52.512544,77.312604 9.9999989,9.9999989 0 0 1 62.512453,67.312182 Z m 50.000047,0 a 9.9999989,9.9999989 0 0 1 10.00042,10.000422 9.9999989,9.9999989 0 0 1 -10.00042,9.999906 9.9999989,9.9999989 0 0 1 -9.99991,-9.999906 9.9999989,9.9999989 0 0 1 9.99991,-10.000422 z" />
+  </g>
+</svg>

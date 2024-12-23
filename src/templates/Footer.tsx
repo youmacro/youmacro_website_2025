@@ -9,6 +9,8 @@ const Footer = () => (
   <Background color="bg-gray-100">
     <Section>
       <CenteredFooter
+        logo={<Logo />}/>
+      {/*<CenteredFooter
         logo={<Logo />}
         iconList={
           <>
@@ -70,7 +72,7 @@ const Footer = () => (
             GitHub
           </Link>
         </li>
-      </CenteredFooter>
+      </CenteredFooter> */}
     </Section>
   </Background>
 );
