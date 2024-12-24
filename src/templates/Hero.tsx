@@ -27,8 +27,10 @@ const Hero = () => (
       <HeroOneButton
         title={
           <>
-            {'YouMacro\n'}
-            <span className="text-pink-400">Video Downloader</span>
+            {/* {'YouMacro\n'} */}
+            <span className="text-default-500">YouMacro</span>
+            <br/>
+            <span className="text-pink-500">Video Downloader</span>
           </>
         }
         description="Download selected videos or all videos on a web page.  Works on almost any website."

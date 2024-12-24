@@ -1,6 +1,7 @@
-import { AppConfig } from '../utils/AppConfig';
+import SvgLogo from "public/logo.svg";
 import Image from 'next/image';
-import SvgLogo from "/public/logo.svg";
+import { AppConfig } from '../utils/AppConfig';
+
 
 type ILogoProps = {
   xl?: boolean;
