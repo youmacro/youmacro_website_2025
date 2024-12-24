@@ -39,8 +39,8 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
       <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
           <iframe
             style={{border: "5px solid pink"}}
-            width="384"
-            height="216"
+            width="448"
+            height="252"
             src={`https://www.youtube.com/embed/${props.youtubeid}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
