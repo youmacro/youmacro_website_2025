@@ -1,0 +1,60 @@
+  v style={{ display: 'flex', justifyContent: 'center' }}>
+
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+<FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
+<WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
+</div>
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+<WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
+<LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>                                                                  </div>
+
+
+import {
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    GabIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon,
+    XIcon,
+
+    EmailShareButton,
+    FacebookShareButton,
+    FacebookMessengerShareButton,
+    GabShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WeiboShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+} from "react-share";

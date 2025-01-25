@@ -1,55 +1,53 @@
 import Link from 'next/link';
 
 import {
-  EmailIcon,
-  FacebookIcon,
-  FacebookMessengerIcon,
-  GabIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
-  LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
-  WhatsappIcon,
-  WorkplaceIcon,
-  XIcon,
+    EmailIcon,
+    FacebookIcon,
+    FacebookMessengerIcon,
+    GabIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon,
+    XIcon,
 
-  EmailShareButton,
-  FacebookShareButton,
-  FacebookMessengerShareButton,
-  GabShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
-  LineShareButton,
-  LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
-  WeiboShareButton,
-  WhatsappShareButton,
-  WorkplaceShareButton,
+    EmailShareButton,
+    FacebookShareButton,
+    FacebookMessengerShareButton,
+    GabShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WeiboShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
 } from "react-share";
-
-
 
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
@@ -206,9 +204,6 @@ const TelegramShare = () => {
     </div>
   );
 }
-
-
-
 const TumblrShare = () => {
   return (
     <div>
@@ -324,11 +319,9 @@ const Hero = () => (
     </Section>
 
      <Section yPadding="pt-0 pb-5">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div>
           <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
           <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
           <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
         </div>
