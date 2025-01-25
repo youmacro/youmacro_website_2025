@@ -315,31 +315,24 @@ const Hero = () => (
         </div>
     </Section>
 
-    <Section yPadding="pt-00 pb-10">
-        <div>
+     <Section yPadding="pt-0 pb-5">
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
           <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
         </div>
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
           <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
         </div>
+    </Section>
 
+    <Section yPadding="pt-00 pb-10">
         <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
         <h1 align="center">The more users we have, the more resources we can allocate.</h1>
-        <h1 align="center">Just click on one of the buttons below to get started.</h1>
+        <h1 align="center">Just click on one of the buttons above to get started.</h1>
     </Section>
 
-    <Section yPadding="pt-20 pb-20">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
-          <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
-          <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
-        </div>
-    </Section>
+
 
 
     {/*
