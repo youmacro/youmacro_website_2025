@@ -57,6 +57,7 @@ const Meta = (props: IMetaProps) => {
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
+          image: props.image,
         }}
       />
     </>

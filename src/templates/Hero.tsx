@@ -1,11 +1,272 @@
 import Link from 'next/link';
 
+import {
+  EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  GabIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon,
+  XIcon,
+
+  EmailShareButton,
+  FacebookShareButton,
+  FacebookMessengerShareButton,
+  GabShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WeiboShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+} from "react-share";
+
+
+
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
+
+
+
+const hashtag = "#videodownloader"
+const hashtags = ['videodownloader','videodownload','download','video']
+const shareUrl = 'https://apps.microsoft.com/detail/9nlwcwnh9whl';
+const source = "https://youmacro.com"
+const subject = "Check out this app called, YouMacro!"
+const body = "Just wanted to share this awesome app called, \"YouMacro Video Downloader\".\n\n* I've been using it to download videos from the web.\n* Just right-click to download videos while you browse the web!\n* It's been amazing so far!"
+const separator = "\n\n"
+const image = "https://www.youmacro.com/assets/images/youmacro/download_all_videos.png"
+
+const EmailShare = () => {
+  return (
+    <div>
+      <EmailShareButton url={shareUrl} subject={subject} body={body} separator={separator}>
+        <EmailIcon size={64} />
+      </EmailShareButton>
+    </div>
+  );
+}
+const FacebookShare = () => {
+  return (
+    <div>
+      <FacebookShareButton url={shareUrl} hashtag={hashtag}>
+        <FacebookIcon size={64} />
+      </FacebookShareButton>
+    </div>
+  );
+};
+const FacebookMessengerShare = () => {
+  return (
+    <div>
+      <FacebookMessengerShareButton url={shareUrl} redirectUri={shareUrl} >
+        <FacebookMessengerIcon size={64} />
+      </FacebookMessengerShareButton>
+    </div>
+  );
+};
+const GabShare = () => {
+  return (
+    <div>
+      <GabShareButton url={shareUrl} hashtag={hashtag}>
+        <GabIcon size={64} />
+      </GabShareButton>
+    </div>
+  );
+};
+const HatenaShare = () => {
+  return (
+    <div>
+      <HatenaShareButton url={shareUrl} title={subject}>
+        <HatenaIcon size={64} />
+      </HatenaShareButton>
+    </div>
+  );
+};
+const InstapaperShare = () => {
+  return (
+    <div>
+      <InstapaperShareButton url={shareUrl} title={subject} description={body}>
+        <InstapaperIcon size={64} />
+      </InstapaperShareButton>
+    </div>
+  );
+};
+const LineShare = () => {
+  return (
+    <div>
+      <LineShareButton url={shareUrl} title={subject}>
+        <LineIcon size={64} />
+      </LineShareButton>
+    </div>
+  );
+}
+const LinkedinShare = () => {
+  return (
+    <div>
+      <LinkedinShareButton url={shareUrl} title={subject} summary={body} source={source}>
+        <LinkedinIcon size={64} />
+      </LinkedinShareButton>
+    </div>
+  );
+};
+const LivejournalShare = () => {
+  return (
+    <div>
+      <LivejournalShareButton url={shareUrl} title={subject} description={body} >
+        <LivejournalIcon size={64} />
+      </LivejournalShareButton>
+    </div>
+  );
+};
+const MailruShare = () => {
+  return (
+    <div>
+      <MailruShareButton url={shareUrl} title={subject} description={body} imageUrl={image}>
+        <MailruIcon size={64} />
+      </MailruShareButton>
+    </div>
+  );
+};
+const OKShare = () => {
+  return (
+    <div>
+      <OKShareButton url={shareUrl} title={subject} description={body} media={image}>
+        <OKIcon size={64} />
+      </OKShareButton>
+    </div>
+  );
+};
+const PinterestShare = () => {
+  return (
+    <div>
+      <PinterestShareButton url={shareUrl} media={image} description={body}>
+        <PinterestIcon size={64} />
+      </PinterestShareButton>
+    </div>
+  );
+}
+const PocketShare = () => {
+  return (
+    <div>
+      <PocketShareButton url={shareUrl} title={subject}>
+        <PocketIcon size={64} />
+      </PocketShareButton>
+    </div>
+  );
+}
+const RedditShare = () => {
+  return (
+    <div>
+      <RedditShareButton url={shareUrl} title={subject}>
+        <RedditIcon size={64} />
+      </RedditShareButton>
+    </div>
+  );
+}
+const TelegramShare = () => {
+  return (
+    <div>
+      <TelegramShareButton url={shareUrl} title={subject} >
+        <TelegramIcon size={64} />
+      </TelegramShareButton>
+    </div>
+  );
+}
+const TumblrShare = () => {
+  return (
+    <div>
+      <TumblrShareButton url={shareUrl} title={subject} caption={body} tags={hashtags}>
+        <TumblrIcon size={64} />
+      </TumblrShareButton>
+    </div>
+  );
+}
+const TwitterShare = () => {
+  return (
+    <div>
+      <TwitterShareButton url={shareUrl} title={subject} hashtags={hashtags}>
+        <TwitterIcon size={64} />
+      </TwitterShareButton>
+    </div>
+  );
+}
+const ViberShare = () => {
+  return (
+    <div>
+      <ViberShareButton url={shareUrl} title={subject} separator={separator}>
+        <ViberIcon size={64} />
+      </ViberShareButton>
+    </div>
+  );
+}
+const VKShare = () => {
+  return (
+    <div>
+      <VKShareButton url={shareUrl} title={subject} image={image}>
+        <VKIcon size={64} />
+      </VKShareButton>
+    </div>
+  );
+}
+const WeiboShare = () => {
+  return (
+    <div>
+      <WeiboShareButton url={shareUrl} title={subject} image={image}>
+        <WeiboIcon size={64} />
+      </WeiboShareButton>
+    </div>
+  );
+}
+const WhatsappShare = () => {
+  return (
+    <div>
+      <WhatsappShareButton url={shareUrl} title={subject} separator={separator}>
+        <WhatsappIcon size={64} />
+      </WhatsappShareButton>
+    </div>
+  );
+}
+const WorkplaceShare = () => {
+  return (
+    <div>
+      <WorkplaceShareButton url={shareUrl} quote={subject} hashtag={hashtag}>
+        <WorkplaceIcon size={64} />
+      </WorkplaceShareButton>
+    </div>
+  );
+}
 
 const Hero = () => (
   <Background color="bg-gray-100">
@@ -23,7 +284,7 @@ const Hero = () => (
       </NavbarTwoColumns>
     </Section>
 
-    <Section yPadding="pt-20 pb-5">
+    <Section yPadding="pt-0 pb-5">
       <HeroOneButton
         title={
           <>
@@ -33,7 +294,7 @@ const Hero = () => (
             <span className="text-pink-500">Video Downloader</span>
           </>
         }
-        description="Download selected videos or all videos on a web page.  Works on almost any website."
+        description="Download select videos or all videos from a web page."
         button={
           <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">
             <Button xl>Microsoft Store Reviews</Button>
@@ -42,7 +303,7 @@ const Hero = () => (
       />
     </Section>
 
-    <Section yPadding="pt-00 pb-20">
+    <Section yPadding="pt-00 pb-5">
         <div align="center">
         <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js" async></script>
         <ms-store-badge
@@ -53,6 +314,22 @@ const Hero = () => (
         </ms-store-badge>
         </div>
     </Section>
+
+    <Section yPadding="pt-00 pb-10">
+      <h1 align="center">Help improve YouMacro by sharing us with your network.</h1>
+      <h1 align="center">The more users we have, the more suggestions and use cases we get.</h1>
+      <h1 align="center">Just click on one of the buttons below to start.</h1>
+    </Section>
+
+    <Section yPadding="pt-00 pb-10">
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/> <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/> <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
+    </div>
+    </Section>
+
 
     {/*
       <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
