@@ -7,23 +7,13 @@ import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
-import {EmailShare, FacebookShare, FacebookMessengerShare, GabShare, HatenaShare, InstapaperShare, LineShare, LinkedinShare,
-    LivejournalShare, MailruShare, OKShare, PinterestShare, PocketShare, RedditShare, TelegramShare, TumblrShare,
-    TwitterShare, ViberShare, VKShare, WeiboShare, WhatsappShare, WorkplaceShare} from './Share';
+import { ShareButtons } from './Share';
 
 
 
 
 const Hero = () => (
-
-
   <Background color="bg-gray-100">
-  <div>
-          <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
-          <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
-          <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
-          <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
-        </div>
     <Section yPadding="py-5">
       <NavbarTwoColumns logo={<Logo xl />}>
         {/*<li>
@@ -69,13 +59,8 @@ const Hero = () => (
         </div>
     </Section>
 
-     <Section yPadding="pt-0 pb-5">
-        <div>
-          <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
-          <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
-          <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
-          <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
-        </div>
+    <Section yPadding="pt-0 pb-5">
+        <ShareButtons/>
     </Section>
 
     <Section yPadding="pt-00 pb-10">

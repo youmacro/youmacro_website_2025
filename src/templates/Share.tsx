@@ -8,8 +8,6 @@ import {
     LineIcon,
     LinkedinIcon,
     LivejournalIcon,
-    MailruIcon,
-    OKIcon,
     PinterestIcon,
     PocketIcon,
     RedditIcon,
@@ -32,8 +30,6 @@ import {
     LineShareButton,
     LinkedinShareButton,
     LivejournalShareButton,
-    MailruShareButton,
-    OKShareButton,
     PinterestShareButton,
     PocketShareButton,
     RedditShareButton,
@@ -138,24 +134,6 @@ const LivejournalShare = () => {
     </div>
   );
 };
-const MailruShare = () => {
-  return (
-    <div>
-      <MailruShareButton url={shareUrl} title={subject} description={body} imageUrl={image}>
-        <MailruIcon size={size} />
-      </MailruShareButton>
-    </div>
-  );
-};
-const OKShare = () => {
-  return (
-    <div>
-      <MailruShareButton url={shareUrl} title={subject} description={body} media={image}>
-        <MailruIcon size={size} />
-      </MailruShareButton>
-    </div>
-  );
-};
 const PinterestShare = () => {
   return (
     <div>
@@ -256,9 +234,20 @@ const WorkplaceShare = () => {
   );
 }
 
+const ShareButtons = () => {
+    return (
+        <div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
+              <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/>
+              <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <FacebookMessengerShare/> <EmailShare/>
+            </div>
+        </div>
+    );
+}
 
-
-export {EmailShare, FacebookShare, FacebookMessengerShare, GabShare, HatenaShare, InstapaperShare, LineShare, LinkedinShare,
-    LivejournalShare, MailruShare, OKShare, PinterestShare, PocketShare, RedditShare, TelegramShare, TumblrShare,
-    TwitterShare, ViberShare, VKShare, WeiboShare, WhatsappShare, WorkplaceShare};
+export {ShareButtons};
 
