@@ -28,5 +28,5 @@ Downloads can be fully customized.
 
 YouMacro Video Downloader can download almost any video from social media and video hosting websites.`,
   locale: 'en',
-  image: "/assets/images/youmacro/download_all_videos.png"
+  image: "https://youmacro.com/assets/images/youmacro/download_all_videos.png"
 };
