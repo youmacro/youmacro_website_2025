@@ -59,7 +59,7 @@ import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
 
-
+const size = 64
 const hashtag = "#videodownloader"
 const hashtags = ['videodownloader','videodownload','download','video']
 const shareUrl = 'https://apps.microsoft.com/detail/9nlwcwnh9whl';
@@ -73,7 +73,7 @@ const EmailShare = () => {
   return (
     <div>
       <EmailShareButton url={shareUrl} subject={subject} body={body} separator={separator}>
-        <EmailIcon size={64} />
+        <EmailIcon size={size} />
       </EmailShareButton>
     </div>
   );
@@ -82,7 +82,7 @@ const FacebookShare = () => {
   return (
     <div>
       <FacebookShareButton url={shareUrl} hashtag={hashtag}>
-        <FacebookIcon size={64} />
+        <FacebookIcon size={size} />
       </FacebookShareButton>
     </div>
   );
@@ -91,7 +91,7 @@ const FacebookMessengerShare = () => {
   return (
     <div>
       <FacebookMessengerShareButton url={shareUrl} redirectUri={shareUrl} >
-        <FacebookMessengerIcon size={64} />
+        <FacebookMessengerIcon size={size} />
       </FacebookMessengerShareButton>
     </div>
   );
@@ -100,7 +100,7 @@ const GabShare = () => {
   return (
     <div>
       <GabShareButton url={shareUrl} hashtag={hashtag}>
-        <GabIcon size={64} />
+        <GabIcon size={size} />
       </GabShareButton>
     </div>
   );
@@ -109,7 +109,7 @@ const HatenaShare = () => {
   return (
     <div>
       <HatenaShareButton url={shareUrl} title={subject}>
-        <HatenaIcon size={64} />
+        <HatenaIcon size={size} />
       </HatenaShareButton>
     </div>
   );
@@ -118,7 +118,7 @@ const InstapaperShare = () => {
   return (
     <div>
       <InstapaperShareButton url={shareUrl} title={subject} description={body}>
-        <InstapaperIcon size={64} />
+        <InstapaperIcon size={size} />
       </InstapaperShareButton>
     </div>
   );
@@ -127,7 +127,7 @@ const LineShare = () => {
   return (
     <div>
       <LineShareButton url={shareUrl} title={subject}>
-        <LineIcon size={64} />
+        <LineIcon size={size} />
       </LineShareButton>
     </div>
   );
@@ -136,7 +136,7 @@ const LinkedinShare = () => {
   return (
     <div>
       <LinkedinShareButton url={shareUrl} title={subject} summary={body} source={source}>
-        <LinkedinIcon size={64} />
+        <LinkedinIcon size={size} />
       </LinkedinShareButton>
     </div>
   );
@@ -145,7 +145,7 @@ const LivejournalShare = () => {
   return (
     <div>
       <LivejournalShareButton url={shareUrl} title={subject} description={body} >
-        <LivejournalIcon size={64} />
+        <LivejournalIcon size={size} />
       </LivejournalShareButton>
     </div>
   );
@@ -154,7 +154,7 @@ const MailruShare = () => {
   return (
     <div>
       <MailruShareButton url={shareUrl} title={subject} description={body} imageUrl={image}>
-        <MailruIcon size={64} />
+        <MailruIcon size={size} />
       </MailruShareButton>
     </div>
   );
@@ -163,7 +163,7 @@ const OKShare = () => {
   return (
     <div>
       <OKShareButton url={shareUrl} title={subject} description={body} media={image}>
-        <OKIcon size={64} />
+        <OKIcon size={size} />
       </OKShareButton>
     </div>
   );
@@ -172,7 +172,7 @@ const PinterestShare = () => {
   return (
     <div>
       <PinterestShareButton url={shareUrl} media={image} description={body}>
-        <PinterestIcon size={64} />
+        <PinterestIcon size={size} />
       </PinterestShareButton>
     </div>
   );
@@ -181,7 +181,7 @@ const PocketShare = () => {
   return (
     <div>
       <PocketShareButton url={shareUrl} title={subject}>
-        <PocketIcon size={64} />
+        <PocketIcon size={size} />
       </PocketShareButton>
     </div>
   );
@@ -190,7 +190,7 @@ const RedditShare = () => {
   return (
     <div>
       <RedditShareButton url={shareUrl} title={subject}>
-        <RedditIcon size={64} />
+        <RedditIcon size={size} />
       </RedditShareButton>
     </div>
   );
@@ -199,7 +199,7 @@ const TelegramShare = () => {
   return (
     <div>
       <TelegramShareButton url={shareUrl} title={subject} >
-        <TelegramIcon size={64} />
+        <TelegramIcon size={size} />
       </TelegramShareButton>
     </div>
   );
@@ -208,7 +208,7 @@ const TumblrShare = () => {
   return (
     <div>
       <TumblrShareButton url={shareUrl} title={subject} caption={body} tags={hashtags}>
-        <TumblrIcon size={64} />
+        <TumblrIcon size={size} />
       </TumblrShareButton>
     </div>
   );
@@ -217,7 +217,7 @@ const TwitterShare = () => {
   return (
     <div>
       <TwitterShareButton url={shareUrl} title={subject} hashtags={hashtags}>
-        <TwitterIcon size={64} />
+        <TwitterIcon size={size} />
       </TwitterShareButton>
     </div>
   );
@@ -226,7 +226,7 @@ const ViberShare = () => {
   return (
     <div>
       <ViberShareButton url={shareUrl} title={subject} separator={separator}>
-        <ViberIcon size={64} />
+        <ViberIcon size={size} />
       </ViberShareButton>
     </div>
   );
@@ -235,7 +235,7 @@ const VKShare = () => {
   return (
     <div>
       <VKShareButton url={shareUrl} title={subject} image={image}>
-        <VKIcon size={64} />
+        <VKIcon size={size} />
       </VKShareButton>
     </div>
   );
@@ -244,7 +244,7 @@ const WeiboShare = () => {
   return (
     <div>
       <WeiboShareButton url={shareUrl} title={subject} image={image}>
-        <WeiboIcon size={64} />
+        <WeiboIcon size={size} />
       </WeiboShareButton>
     </div>
   );
@@ -253,7 +253,7 @@ const WhatsappShare = () => {
   return (
     <div>
       <WhatsappShareButton url={shareUrl} title={subject} separator={separator}>
-        <WhatsappIcon size={64} />
+        <WhatsappIcon size={size} />
       </WhatsappShareButton>
     </div>
   );
@@ -262,7 +262,7 @@ const WorkplaceShare = () => {
   return (
     <div>
       <WorkplaceShareButton url={shareUrl} quote={subject} hashtag={hashtag}>
-        <WorkplaceIcon size={64} />
+        <WorkplaceIcon size={size} />
       </WorkplaceShareButton>
     </div>
   );
@@ -316,18 +316,18 @@ const Hero = () => (
     </Section>
 
     <Section yPadding="pt-00 pb-10">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div>
           <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
           <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div>
           <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
           <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
         </div>
 
-        <h1 align="center">Help improve YouMacro by sharing us with your network.</h1>
-        <h1 align="center">The more users we have, the more suggestions and use cases we get.</h1>
-        <h1 align="center">Just click on one of the buttons below to start.</h1>
+        <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
+        <h1 align="center">The more users we have, the more resources we can allocate.</h1>
+        <h1 align="center">Just click on one of the buttons below to get started.</h1>
     </Section>
 
     <Section yPadding="pt-20 pb-20">
