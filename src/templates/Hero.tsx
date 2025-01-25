@@ -49,12 +49,15 @@ import {
     WorkplaceShareButton,
 } from "react-share";
 
+import React, { useState, useEffect } from 'react';
+
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
+
 
 
 const size = 64
@@ -67,7 +70,7 @@ const body = "Just wanted to share this awesome app called, \"YouMacro Video Dow
 const separator = "\n\n"
 const image = "https://www.youmacro.com/assets/images/youmacro/download_all_videos.png"
 
-import React, { useState, useEffect } from 'react';
+
 function useHasMounted() {
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
