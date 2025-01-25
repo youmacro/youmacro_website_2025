@@ -69,6 +69,8 @@ const body = "Just wanted to share this awesome app called, \"YouMacro Video Dow
 const separator = "\n\n"
 const image = "https://www.youmacro.com/assets/images/youmacro/download_all_videos.png"
 
+
+
 const EmailShare = () => {
   return (
     <div>
@@ -204,6 +206,9 @@ const TelegramShare = () => {
     </div>
   );
 }
+
+
+
 const TumblrShare = () => {
   return (
     <div>
@@ -268,6 +273,9 @@ const WorkplaceShare = () => {
   );
 }
 
+
+
+
 const Hero = () => (
   <Background color="bg-gray-100">
     <Section yPadding="py-5">
@@ -316,10 +324,14 @@ const Hero = () => (
     </Section>
 
      <Section yPadding="pt-0 pb-5">
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
           <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
           <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
+        </div>
     </Section>
 
     <Section yPadding="pt-00 pb-10">
@@ -346,3 +358,7 @@ const Hero = () => (
 );
 
 export { Hero };
+
+export {EmailShare, FacebookShare, FacebookMessengerShare, GabShare, HatenaShare, InstapaperShare, LineShare, LinkedinShare,
+    LivejournalShare, MailruShare, OKShare, PinterestShare, PocketShare, RedditShare, TelegramShare, TumblrShare,
+    TwitterShare, ViberShare, VKShare, WeiboShare, WhatsappShare, WorkplaceShare};
