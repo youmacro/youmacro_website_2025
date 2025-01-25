@@ -45,9 +45,7 @@ import {
     WeiboShareButton,
     WhatsappShareButton,
     WorkplaceShareButton,
-} from "react-share";
-
-import React, { useState, useEffect } from 'react';
+} from "next-share";
 
 const size = 64
 const hashtag = "#videodownloader"
@@ -59,21 +57,7 @@ const body = "Just wanted to share this awesome app called, \"YouMacro Video Dow
 const separator = "\n\n"
 const image = "https://www.youmacro.com/assets/images/youmacro/download_all_videos.png"
 
-
-
-function useHasMounted() {
-  const [hasMounted, setHasMounted] = React.useState(false);
-  React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
-  return hasMounted;
-}
-
 const EmailShare = () => {
-    const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <EmailShareButton url={shareUrl} subject={subject} body={body} separator={separator}>
@@ -83,10 +67,6 @@ const EmailShare = () => {
   );
 }
 const FacebookShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <FacebookShareButton url={shareUrl} hashtag={hashtag}>
@@ -96,10 +76,6 @@ const FacebookShare = () => {
   );
 };
 const FacebookMessengerShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <FacebookMessengerShareButton url={shareUrl} redirectUri={shareUrl} >
@@ -109,10 +85,6 @@ const FacebookMessengerShare = () => {
   );
 };
 const GabShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <GabShareButton url={shareUrl} hashtag={hashtag}>
@@ -122,10 +94,6 @@ const GabShare = () => {
   );
 };
 const HatenaShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <HatenaShareButton url={shareUrl} title={subject}>
@@ -135,10 +103,6 @@ const HatenaShare = () => {
   );
 };
 const InstapaperShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <InstapaperShareButton url={shareUrl} title={subject} description={body}>
@@ -148,10 +112,6 @@ const InstapaperShare = () => {
   );
 };
 const LineShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <LineShareButton url={shareUrl} title={subject}>
@@ -161,10 +121,6 @@ const LineShare = () => {
   );
 }
 const LinkedinShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <LinkedinShareButton url={shareUrl} title={subject} summary={body} source={source}>
@@ -174,10 +130,6 @@ const LinkedinShare = () => {
   );
 };
 const LivejournalShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <LivejournalShareButton url={shareUrl} title={subject} description={body} >
@@ -187,10 +139,6 @@ const LivejournalShare = () => {
   );
 };
 const MailruShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <MailruShareButton url={shareUrl} title={subject} description={body} imageUrl={image}>
@@ -200,23 +148,15 @@ const MailruShare = () => {
   );
 };
 const OKShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
-      <OKShareButton url={shareUrl} title={subject} description={body} media={image}>
-        <OKIcon size={size} />
-      </OKShareButton>
+      <MailruShareButton url={shareUrl} title={subject} description={body} media={image}>
+        <MailruIcon size={size} />
+      </MailruShareButton>
     </div>
   );
 };
 const PinterestShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <PinterestShareButton url={shareUrl} media={image} description={body}>
@@ -226,10 +166,6 @@ const PinterestShare = () => {
   );
 }
 const PocketShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <PocketShareButton url={shareUrl} title={subject}>
@@ -239,10 +175,6 @@ const PocketShare = () => {
   );
 }
 const RedditShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <RedditShareButton url={shareUrl} title={subject}>
@@ -252,10 +184,6 @@ const RedditShare = () => {
   );
 }
 const TelegramShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <TelegramShareButton url={shareUrl} title={subject} >
@@ -265,10 +193,6 @@ const TelegramShare = () => {
   );
 }
 const TumblrShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <TumblrShareButton url={shareUrl} title={subject} caption={body} tags={hashtags}>
@@ -278,10 +202,6 @@ const TumblrShare = () => {
   );
 }
 const TwitterShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <TwitterShareButton url={shareUrl} title={subject} hashtags={hashtags}>
@@ -291,10 +211,6 @@ const TwitterShare = () => {
   );
 }
 const ViberShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <ViberShareButton url={shareUrl} title={subject} separator={separator}>
@@ -304,10 +220,6 @@ const ViberShare = () => {
   );
 }
 const VKShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <VKShareButton url={shareUrl} title={subject} image={image}>
@@ -317,10 +229,6 @@ const VKShare = () => {
   );
 }
 const WeiboShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <WeiboShareButton url={shareUrl} title={subject} image={image}>
@@ -330,10 +238,6 @@ const WeiboShare = () => {
   );
 }
 const WhatsappShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <WhatsappShareButton url={shareUrl} title={subject} separator={separator}>
@@ -343,10 +247,6 @@ const WhatsappShare = () => {
   );
 }
 const WorkplaceShare = () => {
-        const hasMounted = useHasMounted();
-    if (!hasMounted) {
-        return null;
-    }
   return (
     <div>
       <WorkplaceShareButton url={shareUrl} quote={subject} hashtag={hashtag}>
@@ -355,6 +255,8 @@ const WorkplaceShare = () => {
     </div>
   );
 }
+
+
 
 export {EmailShare, FacebookShare, FacebookMessengerShare, GabShare, HatenaShare, InstapaperShare, LineShare, LinkedinShare,
     LivejournalShare, MailruShare, OKShare, PinterestShare, PocketShare, RedditShare, TelegramShare, TumblrShare,
