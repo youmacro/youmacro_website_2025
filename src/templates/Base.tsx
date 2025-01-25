@@ -8,7 +8,7 @@ import { VerticalFeatures } from './VerticalFeatures';
 
 const Base = () => (
   <div className="text-gray-600 antialiased">
-    <Meta title={AppConfig.title} description={AppConfig.description} />
+    <Meta title={AppConfig.title} description={AppConfig.description} image={AppConfig.image}/>
     <Hero />
     {/*<Sponsors />*/}
     <VerticalFeatures />

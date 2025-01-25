@@ -8,6 +8,7 @@ type IMetaProps = {
   title: string;
   description: string;
   canonical?: string;
+  image: string;
 };
 
 const Meta = (props: IMetaProps) => {
@@ -51,6 +52,7 @@ const Meta = (props: IMetaProps) => {
         title={props.title}
         description={props.description}
         canonical={props.canonical}
+        image={props.image}
         openGraph={{
           title: props.title,
           description: props.description,
