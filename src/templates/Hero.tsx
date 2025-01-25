@@ -316,14 +316,10 @@ const Hero = () => (
     </Section>
 
      <Section yPadding="pt-0 pb-5">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
           <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/> <FacebookMessengerShare/>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/> <OKShare/> <MailruShare/>
           <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <EmailShare/>
-        </div>
     </Section>
 
     <Section yPadding="pt-00 pb-10">
