@@ -32,13 +32,38 @@ import { Hero } from '../templates/Hero';
       </NavbarTwoColumns>
     </Section>
 
-        <Section yPadding="pt-00 pb-10">
-            <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
-            <h1 align="center">The more users we have, the more resources we can allocate.</h1>
-            <h1 align="center">Just click on one of the buttons below to get started.</h1>
+        <Section yPadding="pt-00 pb-5">
+            <h1 align="center"><b>Help us grow and improve YouMacro in 2 ways</b></h1>
+        </Section>
+
+        <Section yPadding="pt-5 pb-5">
+            <h1 align="center"> <b>Tag videos or comments with,   #youmacro_video_downloader</b> </h1>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <ul style={{ textAlign: 'left' }}>
+                  <li>(1) We will make sure tagged videos download successfully.</li>
+                  <li>(2) We will make sure similar videos download successfully.</li>
+                  <li>(3) We will add these tagged videos to a test suite.</li>
+                </ul>
+            </div>
+        </Section>
+
+        <Section yPadding="pt-5 pb-10">
+            <h1 align="center"> <b>Share your experiences on your socials</b> </h1>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <ul style={{ textAlign: 'left' }}>
+                  <li>(1) We will find it, read it and give it a thumbs up.</li>
+                  <li>(2) We will use these experiences to improve the app.</li>
+                  <li>(3) We made it super easy to post by pre-filling fields.</li>
+                  <li>(4) <b>Click one of the social buttons below to start. </b></li>
+                </ul>
+            </div>
         </Section>
 
         <ShareButtons />
+
+
+
+
 
        </div>
      );
