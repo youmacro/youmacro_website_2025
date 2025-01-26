@@ -33,7 +33,7 @@ import { Hero } from '../templates/Hero';
     </Section>
 
         <Section yPadding="pt-00 pb-5">
-            <h1 align="center"><b>Help us grow and improve YouMacro in 2 ways</b></h1>
+            <h1 align="center"><b>Help us grow and improve YouMacro</b></h1>
         </Section>
 
         <Section yPadding="pt-5 pb-5">
