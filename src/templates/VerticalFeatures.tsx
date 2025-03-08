@@ -4,7 +4,7 @@ import { Section } from '../layout/Section';
 const VerticalFeatures = () => (
   <Section
     title="Try it once and you won't go back"
-    description="Download videos directly from the web page. Download selected videos or all videos."
+    description="Download videos by right-clicking as you browse the web. Download some or all videos on the page."
   >
     <VerticalFeatureRow
       title="Download single videos"

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import React from 'react';
 
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
@@ -8,7 +9,7 @@ import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
 import { ShareButtons } from './Share';
-
+import PayPalDonateButton from './PayPalDonateButton';
 
 
 
@@ -38,7 +39,7 @@ const Hero = () => (
             <span className="text-pink-500">Video Downloader</span>
           </>
         }
-        description="Download select videos or all videos from a web page."
+        description="Download videos by right-clicking as you browse the web."
         button={
           <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">
             <Button xl>Microsoft Store Reviews</Button>
@@ -47,7 +48,7 @@ const Hero = () => (
       />
     </Section>
 
-    <Section yPadding="pt-00 pb-5">
+    <Section yPadding="pt-00 pb-0">
         <div align="center">
         <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js" async></script>
         <ms-store-badge
@@ -59,17 +60,25 @@ const Hero = () => (
         </div>
     </Section>
 
-    <Section yPadding="pt-0 pb-5">
-        <ShareButtons/>
+    <Section yPadding="pt-00 pb-2">
+        <h1 align="center" style={{ color: 'red' }}>This app is 100% free.</h1>
+        <h1 align="center" style={{ color: 'red' }}>Your donations helps us to keep moving forward.</h1>
     </Section>
 
-    <Section yPadding="pt-00 pb-10">
+    <Section yPadding="pt-00 pb-20">
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <PayPalDonateButton hostedButtonId={'KQQ7JD444V8MN'} align="center" />
+        </div>
+    </Section>
+
+    <Section yPadding="pt-00 pb-5">
         <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
-        <h1 align="center">The more users we have, the more resources we can allocate.</h1>
         <h1 align="center">Just click on one of the buttons above to get started.</h1>
     </Section>
 
-
+    <Section yPadding="pt-0 pb-5">
+        <ShareButtons/>
+    </Section>
 
 
     {/*
