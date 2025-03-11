@@ -37,19 +37,20 @@ import { Hero } from '../templates/Hero';
         </Section>
 
         <Section yPadding="pt-5 pb-5">
-            <h1 align="center"> <b>Tag videos or comments with,   #youmacro_video_downloader</b> </h1>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <h1 align="center">Tag videos or comments with <b>#youmacro</b> </h1>
+            <h1 align="center">Share your experiences on your socials </h1>
+            {/*}<div style={{ display: 'flex', justifyContent: 'center' }}>
                 <ul style={{ textAlign: 'left' }}>
                   <li>(1) We will make sure tagged videos download successfully.</li>
                   <li>(2) We will make sure similar videos download successfully.</li>
                   <li>(3) We will add these tagged videos to a test suite.</li>
                 </ul>
-            </div>
+            </div>*/}
         </Section>
 
-        <Section yPadding="pt-5 pb-10">
+        {/*<Section yPadding="pt-5 pb-10">
             <h1 align="center"> <b>Share your experiences on your socials</b> </h1>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            }<div style={{ display: 'flex', justifyContent: 'center' }}>
                 <ul style={{ textAlign: 'left' }}>
                   <li>(1) We will find it, read it and give it a thumbs up.</li>
                   <li>(2) We will use these experiences to improve the app.</li>
@@ -57,7 +58,7 @@ import { Hero } from '../templates/Hero';
                   <li>(4) <b>Click one of the social buttons below to start. </b></li>
                 </ul>
             </div>
-        </Section>
+        </Section>*/}
 
         <ShareButtons />
 
