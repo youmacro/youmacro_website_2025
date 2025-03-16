@@ -60,6 +60,7 @@ const Hero = () => (
         </div>
     </Section>
 
+    {/*
     <Section yPadding="pt-00 pb-2">
         <h1 align="center" style={{ color: 'red' }}>This app is 100% free. No ads, No in-app purchases.</h1>
         <h1 align="center" style={{ color: 'red' }}>If you find this app useful, please consider donating.</h1>
@@ -71,6 +72,7 @@ const Hero = () => (
             <PayPalDonateButton hostedButtonId={'KQQ7JD444V8MN'} align="center" />
         </div>
     </Section>
+    */}
 
     <Section yPadding="pt-00 pb-5">
         <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
