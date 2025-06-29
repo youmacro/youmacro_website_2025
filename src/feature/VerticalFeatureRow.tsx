@@ -4,11 +4,9 @@ import { useRouter } from 'next/router';
 type IVerticalFeatureRowProps = {
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
+  video: string;
+  poster: string;
   reverse?: boolean;
-
-  youtubeid: string;
 };
 
 const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
@@ -31,20 +29,18 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
         <div className="mt-6 text-xl leading-9">{props.description}</div>
       </div>
 
-      {/*
-          <div className="w-full p-6 sm:w-1/2">
-            <img src={`${router.basePath}${props.image}`} alt={props.imageAlt} />
-          </div>
-      */}
-      <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-          <iframe
+      <div className="relative flex items-center justify-center" data-aos="fade-up" data-aos-delay="200">
+          <video
             style={{border: "5px solid pink"}}
             width="448"
             height="252"
-            src={`https://www.youtube.com/embed/${props.youtubeid}`}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
-          </iframe>
+            controls
+            title={props.title}
+            poster={`${router.basePath}${props.poster}`}
+            src={`${router.basePath}${props.video}`}
+          >
+            Your browser does not support the video tag.
+          </video>
       </div>
     </div>
   );
