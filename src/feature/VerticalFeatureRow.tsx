@@ -31,7 +31,8 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
 
       <div className="relative flex items-center justify-center" data-aos="fade-up" data-aos-delay="200">
           <video
-            style={{border: "5px solid pink"}}
+            // style={{border: "5px solid pink"}}
+            className="rounded-md border-[10px] border-solid border-blue-400"
             width="448"
             height="252"
             controls
