@@ -3,3 +3,8 @@
 @tailwind components;
 
 @tailwind utilities;
+body {
+  background-image: url('/p6.webp');
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
