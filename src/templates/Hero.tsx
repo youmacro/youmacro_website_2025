@@ -14,7 +14,7 @@ import PayPalDonateButton from './PayPalDonateButton';
 
 
 const Hero = () => (
-  <Background color="bg-gray-100">
+  <Background color="bg-transparent">
     <Section yPadding="py-5">
       <NavbarTwoColumns logo={<Logo xl />}>
         {/*<li>
@@ -99,5 +99,3 @@ const Hero = () => (
 );
 
 export { Hero };
-
-
