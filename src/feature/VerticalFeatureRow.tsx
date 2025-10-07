@@ -4,8 +4,9 @@ import { useRouter } from 'next/router';
 type IVerticalFeatureRowProps = {
   title: string;
   description: string;
-  video: string;
+  video?: string;
   poster: string;
+  iframeSrc?: string;
   reverse?: boolean;
 };
 
@@ -29,19 +30,33 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
         <div className="mt-6 text-xl leading-9">{props.description}</div>
       </div>
 
-      <div className="relative flex items-center justify-center" data-aos="fade-up" data-aos-delay="200">
-          <video
-            // style={{border: "5px solid pink"}}
+      <div
+        className="relative flex w-full items-center justify-center sm:w-1/2"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        {props.iframeSrc ? (
+          <iframe
             className="rounded-md border-[10px] border-solid border-blue-400"
             width="448"
             height="252"
-            controls
+            src={props.iframeSrc}
             title={props.title}
-            poster={`${router.basePath}${props.poster}`}
-            src={`${router.basePath}${props.video}`}
-          >
-            Your browser does not support the video tag.
-          </video>
+            allow="autoplay"
+          ></iframe>
+        ) : (
+          props.video && (
+            <video
+              className="rounded-md border-[10px] border-solid border-blue-400"
+              width="448"
+              height="252"
+              controls
+              title={props.title}
+              poster={`${router.basePath}${props.poster}`}
+              src={`${router.basePath}${props.video}`}
+            />
+          )
+        )}
       </div>
     </div>
   );

@@ -10,53 +10,46 @@ const VerticalFeatures = () => (
       title="Download single videos"
       description="Download single videos by using the right click menu and choosing the Download_This. Alternatively use the toolbar."
       poster="/assets/images/youmacro/download_single_videos.png"
-      video="/assets/videos/download_single_videos.mp4"
-      // youtubeid="asLQyp3xYnM?si=21bahxZnmmAyAGnZ"
+      iframeSrc="https://drive.google.com/file/d/1sAPr0o1sv1Xrk-8LBoLto6sgGUZPyTiG/preview"
     />
     <VerticalFeatureRow
       title="Download all videos"
       description="Download all videos by using the right click and choose Download_All. Alternatively use the toolbar."
       poster="/assets/images/youmacro/download_all_videos.png"
-      video="/assets/videos/download_all_videos.mp4"
-      // youtubeid="XnXYOCtam18?si=iXWneXd-P3GPSmR6"
+      iframeSrc="https://drive.google.com/file/d/1P6B3TU4x_-zQx2lM_ahsOq96q3F_J2kv/preview"
       reverse
     />
     <VerticalFeatureRow
       title="Download selected videos"
       description="Select the text associated with the videos you want. Then use the right click menu and choose Download_Selected."
       poster="/assets/images/youmacro/download_selected_videos.png"
-      video="/assets/videos/download_selected_videos.mp4"
-      // youtubeid="YiZqqn74hpk?si=1q4dnxQA2nNue5Tz"
+      iframeSrc="https://drive.google.com/file/d/1m7FycQ2zI35Gj50fP2PzZiNU4S1EfPGy/preview"
     />
     <VerticalFeatureRow
       title="Download videos in parallel"
       description="All downloads happen in parallel, speeding up overall download times."
       poster="/assets/images/youmacro/parallel_downloads.png"
-      video="/assets/videos/parallel_downloads.mp4"
-      // youtubeid="4aXeJNQAN4Q?si=ebLnBmc4bDCMKd4i"
+      iframeSrc="https://drive.google.com/file/d/1AUhDCGR1MKjUahmkzKjGkdx3aUH4Aak5/preview"
       reverse
     />
     <VerticalFeatureRow
       title="Customize video and audio settings"
       description="Choose the exact video and audio settings you want. You can download just the audio as well."
       poster="/assets/images/youmacro/change_settings.png"
-      video="/assets/videos/change_settings.mp4"
-      // youtubeid="44cprCqYQpo?si=TXoM6LTV-EZoK-Ri"
+      iframeSrc="https://drive.google.com/file/d/1yVM8Yg3xA8PVCdVfASV5Cx4hZEpVTogz/preview"
     />
     <VerticalFeatureRow
       title="View your downloaded videos"
       description="View your downloaded videos by pressing the View_Downloads button in the toolabr."
       poster="/assets/images/youmacro/view_downloads.png"
-      video="/assets/videos/view_downloads.mp4"
-      // youtubeid="KYYx7oL3CtE?si=VuvcUZe1fwO6CDUU"
+      iframeSrc="https://drive.google.com/file/d/1oYQ5EIfLKFGPoJ4RH431XF3KR--dmsKf/preview"
       reverse
     />
     <VerticalFeatureRow
       title="Dark mode enabled"
       description="If you have dark mode enabled on your desktop, YouMacro will change colors to fit your color scheme."
       poster="/assets/images/youmacro/dark_mode.png"
-      video="/assets/videos/dark_mode.mp4"
-      // youtubeid="hdHdWdj27Fw?si=qIblazVZqO_soQf3"
+      iframeSrc="https://drive.google.com/file/d/1QEjBlNVDuKuGQ6zUOOoe_hwx3vHUyvBK/preview"
     />
   </Section>
 );
