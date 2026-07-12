@@ -1,101 +1,139 @@
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
 
-import { Background } from '../background/Background';
-import { Button } from '../button/Button';
-import { HeroOneButton } from '../hero/HeroOneButton';
-import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
-import { Logo } from './Logo';
+import { StoreButton } from "../button/StoreButton";
+import { DownloadIcon } from "../icons/DownloadIcon";
+import { AppConfig } from "../utils/AppConfig";
+import { Logo } from "./Logo";
 
-import { ShareButtons } from './Share';
-import PayPalDonateButton from './PayPalDonateButton';
-
-
+const CheckIcon = () => (
+  <svg aria-hidden="true" viewBox="0 0 20 20">
+    <path
+      d="m5 10.5 3.2 3.2L15.5 6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  </svg>
+);
 
 const Hero = () => (
-  <Background color="bg-transparent">
-    <Section yPadding="py-5">
-      <NavbarTwoColumns logo={<Logo xl />}>
-        {/*<li>
-          <Link href="https://youmacro.com">
-            GitHub
-          </Link>
-        </li>
-        */}
-        <li>
-          <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">Microsoft Store</Link>
-        </li>
-      </NavbarTwoColumns>
-    </Section>
-
-    <Section yPadding="pt-0 pb-5">
-      <HeroOneButton
-        title={
-          <>
-            {/* {'YouMacro\n'} */}
-            <span className="text-default-500">YouMacro</span>
-            <br/>
-            <span className="text-pink-500">Video Downloader</span>
-          </>
-        }
-        description="Download videos by right-clicking as you browse the web."
-        button={
-          <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">
-            <Button xl>Microsoft Store Reviews</Button>
-          </Link>
-        }
-      />
-    </Section>
-
-    <Section yPadding="pt-00 pb-0">
-        <div align="center">
-        <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js" async></script>
-        <ms-store-badge
-          productid="9NLWCWNH9WHL"
-          theme="auto"
-          language="en-US"
-          animation="on">
-        </ms-store-badge>
+  <header className="hero-shell" id="top">
+    <div aria-hidden="true" className="hero-orb hero-orb--one" />
+    <div aria-hidden="true" className="hero-orb hero-orb--two" />
+    <div className="site-container">
+      <nav aria-label="Primary navigation" className="topbar">
+        <Link aria-label="YouMacro home" href="#top">
+          <Logo xl />
+        </Link>
+        <div className="topbar__links">
+          <Link href="#how-it-works">How it works</Link>
+          <Link href="#features">Features</Link>
+          <Link href="#privacy">Privacy</Link>
         </div>
-    </Section>
+        <Link
+          className="topbar__store"
+          href={AppConfig.storeUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Get the app <span aria-hidden="true">&#8599;</span>
+        </Link>
+      </nav>
 
-    {/*
-    <Section yPadding="pt-00 pb-2">
-        <h1 align="center" style={{ color: 'red' }}>This app is 100% free. No ads, No in-app purchases.</h1>
-        <h1 align="center" style={{ color: 'red' }}>If you find this app useful, please consider donating.</h1>
-        <h1 align="center" style={{ color: 'red' }}>Your donations helps us to keep moving forward.</h1>
-    </Section>
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <div className="eyebrow">
+            <span className="eyebrow__dot" />
+            Video downloader for Windows
+          </div>
+          <h1>
+            Save videos from the web.
+            <span>Right as you browse.</span>
+          </h1>
+          <p className="hero-copy__lead">
+            Browse the web in YouMacro, then right-click to download one video,
+            selected videos, or every video on the page. Queue hundreds at once
+            and let the multithreaded engine run them in parallel.
+          </p>
 
-    <Section yPadding="pt-00 pb-20">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <PayPalDonateButton hostedButtonId={'KQQ7JD444V8MN'} align="center" />
+          <div className="hero-actions">
+            <StoreButton />
+            <Link className="text-button" href="#how-it-works">
+              See how it works <span aria-hidden="true">&darr;</span>
+            </Link>
+          </div>
+          <p className="hero-compatibility">
+            <CheckIcon />
+            Works across most social media and video-hosting sites.
+          </p>
         </div>
-    </Section>
-    */}
 
-    <Section yPadding="pt-00 pb-5">
-        <h1 align="center">Help us grow YouMacro by sharing us with your network.</h1>
-        <h1 align="center">Just click on one of the buttons above to get started.</h1>
-    </Section>
-
-    <Section yPadding="pt-0 pb-5">
-        <ShareButtons/>
-    </Section>
-
-
-    {/*
-      <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-          <iframe
-            width="1024"
-            height="576"
-            src="https://www.youtube.com/embed/vmZa8sd-i4Y?si=G3e8malKX9yE7-1x"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
-          </iframe>
+        <div className="hero-visual">
+          <div aria-hidden="true" className="hero-visual__halo" />
+          <figure className="app-window">
+            <div className="app-window__bar">
+              <div aria-hidden="true" className="window-dots">
+                <span />
+                <span />
+                <span />
+              </div>
+              <span>YouMacro Browser</span>
+              <div aria-hidden="true" className="window-controls">
+                <span>-</span>
+                <span>&#9633;</span>
+                <span>&times;</span>
+              </div>
+            </div>
+            <div className="app-window__image">
+              <Image
+                alt="YouMacro downloading every video detected on a page"
+                height={1080}
+                priority
+                sizes="(max-width: 960px) 92vw, 52vw"
+                src="/assets/images/youmacro/download_all_videos.png"
+                width={1920}
+              />
+            </div>
+          </figure>
+          <div className="hero-visual__stats">
+            <div className="floating-card floating-card--speed">
+              <span className="floating-card__icon">
+                <DownloadIcon />
+              </span>
+              <span>
+                <small>Built for big queues</small>
+                <strong>Hundreds in parallel</strong>
+              </span>
+            </div>
+            <div className="floating-card floating-card--privacy">
+              <span className="privacy-pulse" />
+              <span>
+                <small>Data collected</small>
+                <strong>None</strong>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-    */}
-  </Background>
+
+      <div aria-label="YouMacro benefits" className="trust-strip">
+        {[
+          "No ads",
+          "No in-app purchases",
+          "No data collection",
+          "Open source",
+        ].map((item) => (
+          <div className="trust-strip__item" key={item}>
+            <CheckIcon />
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </header>
 );
 
 export { Hero };

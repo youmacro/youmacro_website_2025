@@ -3,16 +3,15 @@ import { AppConfig } from '../utils/AppConfig';
 import { Banner } from './Banner';
 import { Footer } from './Footer';
 import { Hero } from './Hero';
-import { Sponsors } from './Sponsors';
+import { ShareButtons } from './Share';
+import { Trust } from './Trust';
 import { VerticalFeatures } from './VerticalFeatures';
 
 const Base = () => (
-  <div className="text-gray-600 antialiased">
-    <Meta title={AppConfig.title} description={AppConfig.description} image={AppConfig.image}/>
+  <div className="site-shell">
+    <Meta canonical="https://youmacro.com/" description={AppConfig.description} image={AppConfig.image} title={AppConfig.title} />
     <Hero />
-    {/*<Sponsors />*/}
-    <VerticalFeatures />
-    <Banner />
+    <main><VerticalFeatures /><Trust /><ShareButtons /><Banner /></main>
     <Footer />
   </div>
 );

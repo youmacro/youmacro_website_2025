@@ -1,6 +1,16 @@
 // components/PayPalDonateButton.tsx
 import React, { useEffect, useRef, useState } from 'react';
 
+type PayPalDonation = {
+  Button: (options: Record<string, unknown>) => { render: (selector: string) => void };
+};
+
+declare global {
+  interface Window {
+    PayPal?: { Donation?: PayPalDonation };
+  }
+}
+
 
 interface PayPalDonateButtonProps {
   hostedButtonId: string;
@@ -36,9 +46,10 @@ const PayPalDonateButton: React.FC<PayPalDonateButtonProps> = ({ hostedButtonId 
   }, []);
 
   useEffect(() => {
-    if (sdkReady && donateButtonRef.current) {
+    const donation = window.PayPal?.Donation;
+    if (sdkReady && donateButtonRef.current && donation) {
       try {
-        window.PayPal.Donation.Button({
+        donation.Button({
           env: 'production',
           hosted_button_id: hostedButtonId,
           image: {

@@ -23,6 +23,7 @@ const Meta = (props: IMetaProps) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
+        <meta name="color-scheme" content="only light" key="color-scheme" />
         <link
           rel="apple-touch-icon"
           href={`${router.basePath}/apple-touch-icon.png`}
@@ -52,15 +53,23 @@ const Meta = (props: IMetaProps) => {
         title={props.title}
         description={props.description}
         canonical={props.canonical}
-        image={props.image}
         openGraph={{
+          type: 'website',
           title: props.title,
           description: props.description,
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
-          image: AppConfig.image,
+          images: [
+            {
+              url: props.image,
+              width: 1920,
+              height: 1080,
+              alt: 'YouMacro Video Downloader for Windows',
+            },
+          ],
         }}
+        twitter={{ cardType: 'summary_large_image' }}
       />
     </>
   );

@@ -33,12 +33,12 @@ import { Hero } from '../templates/Hero';
     </Section>
 
         <Section yPadding="pt-00 pb-5">
-            <h1 align="center"><b>Help us grow and improve YouMacro</b></h1>
+            <h1 className="text-center"><b>Help us grow and improve YouMacro</b></h1>
         </Section>
 
         <Section yPadding="pt-5 pb-5">
-            <h1 align="center">Tag videos or comments with <b>#youmacro</b> </h1>
-            <h1 align="center">Share your experiences on your socials </h1>
+            <h1 className="text-center">Tag videos or comments with <b>#youmacro</b> </h1>
+            <h1 className="text-center">Share your experiences on your socials </h1>
             {/*}<div style={{ display: 'flex', justifyContent: 'center' }}>
                 <ul style={{ textAlign: 'left' }}>
                   <li>(1) We will make sure tagged videos download successfully.</li>

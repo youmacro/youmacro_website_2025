@@ -1,40 +1,32 @@
-import Link from 'next/link';
-
-import { Button } from '../button/Button';
-import { CTABanner } from '../cta/CTABanner';
-import { Section } from '../layout/Section';
-import { Background } from '../background/Background';
-
-
+import { StoreButton } from '../button/StoreButton';
+import { DownloadIcon } from '../icons/DownloadIcon';
 
 const Banner = () => (
-  <Background color="bg-gray-100">
-
-          <Section yPadding="pt-00 pb-10">
-            <CTABanner
-              title="Start downloading your favorite videos."
-              subtitle="It's only one click away."
-              button={
-                <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">
-                  <Button>Microsoft Store Reviews</Button>
-                </Link>
-              }
-            />
-          </Section>
-
-          <Section yPadding="pt-00 pb-20">
-            <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js" async></script>
-              <div>
-                <ms-store-badge
-                  productid="9NLWCWNH9WHL"
-                  theme="auto"
-                  language="en-US"
-                  animation="on">
-                </ms-store-badge>
-              </div>
-          </Section>
-
-  </Background>
+  <section className="cta-section">
+    <div className="site-container">
+      <div className="cta-card">
+        <div aria-hidden="true" className="cta-card__orb" />
+        <div className="cta-card__copy">
+          <span className="section-kicker section-kicker--dark">
+            Available for Windows
+          </span>
+          <h2>Ready to make video downloads effortless?</h2>
+          <p>
+            Get YouMacro from Microsoft Store and start saving your favorite
+            videos with a right-click.
+          </p>
+          <div className="cta-card__actions">
+            <StoreButton />
+            <span>No ads. No in-app purchases.</span>
+          </div>
+        </div>
+        <div aria-hidden="true" className="cta-card__mark">
+          <span className="cta-download-icon"><DownloadIcon /></span>
+          <small>One click away</small>
+        </div>
+      </div>
+    </div>
+  </section>
 );
 
 export { Banner };

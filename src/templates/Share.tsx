@@ -19,7 +19,6 @@ import {
     WeiboIcon,
     WhatsappIcon,
     WorkplaceIcon,
-    XIcon,
 
     EmailShareButton,
     FacebookShareButton,
@@ -43,12 +42,12 @@ import {
     WorkplaceShareButton,
 } from "next-share";
 
-const size = 64
+const size = 42
 const hashtag = "#videodownloader"
 const hashtags = ['videodownloader','videodownload','download','video']
 const shareUrl = 'https://apps.microsoft.com/detail/9nlwcwnh9whl';
 const source = "https://youmacro.com"
-const subject = "Check out this app called, YouMacro!"
+const subject = "Try YouMacro, a fast video downloader for Windows"
 const body = "Just wanted to share this awesome app called, \"YouMacro Video Downloader\".\n\n* I've been using it to download videos from the web.\n* Just right-click to download videos while you browse the web!\n* It's been amazing so far!"
 const separator = "\n\n"
 const image = "https://www.youmacro.com/assets/images/youmacro/download_all_videos.png"
@@ -74,7 +73,7 @@ const FacebookShare = () => {
 const FacebookMessengerShare = () => {
   return (
     <div>
-      <FacebookMessengerShareButton url={shareUrl} redirectUri={shareUrl} >
+      <FacebookMessengerShareButton appId="" url={shareUrl} redirectUri={shareUrl} >
         <FacebookMessengerIcon size={size} />
       </FacebookMessengerShareButton>
     </div>
@@ -83,7 +82,7 @@ const FacebookMessengerShare = () => {
 const GabShare = () => {
   return (
     <div>
-      <GabShareButton url={shareUrl} hashtag={hashtag}>
+      <GabShareButton url={shareUrl} title={subject}>
         <GabIcon size={size} />
       </GabShareButton>
     </div>
@@ -234,20 +233,23 @@ const WorkplaceShare = () => {
   );
 }
 
-const ShareButtons = () => {
-    return (
-        <div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+const ShareButtons = () => (
+  <section className="share-section" id="share">
+    <div className="site-container">
+      <div className="share-heading">
+        <span className="section-kicker">Spread the word</span>
+        <h2>Help more people discover YouMacro.</h2>
+        <p>Know someone who saves videos from the web? Choose a channel below.</p>
+      </div>
+      <div className="share-grid">
               <FacebookShare/> <RedditShare/> <TwitterShare/> <LinkedinShare/> <TumblrShare/> <PinterestShare/>
               <WorkplaceShare/> <TelegramShare/> <WhatsappShare/> <LineShare/>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
               <WeiboShare/> <VKShare/> <ViberShare/> <PocketShare/>
               <LivejournalShare/> <InstapaperShare/> <HatenaShare/> <GabShare/> <FacebookMessengerShare/> <EmailShare/>
-            </div>
-        </div>
-    );
-}
+      </div>
+    </div>
+  </section>
+);
 
 export {ShareButtons};
 
