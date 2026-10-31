@@ -1,73 +1,157 @@
-import Link from 'next/link';
-import React from 'react';
-import { Meta } from '../layout/Meta';
-import { AppConfig } from '../utils/AppConfig';
-import { Footer } from '../templates/Footer';
-import { ShareButtons } from '../templates/Share'
+import Head from "next/head";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
-import { Logo } from '../templates/Logo';
-import { Section } from '../layout/Section';
-import { Banner } from '../templates/Banner';
-import { Hero } from '../templates/Hero';
+const WEBSITE_URL = "https://youmacro.com/";
+const LITE_STORE_URL = "https://apps.microsoft.com/detail/9NLWCWNH9WHL";
+const PRO_STORE_URL = "https://apps.microsoft.com/detail/9P2V0G3P86BD";
 
+export default function SharePage() {
+  const [canShare, setCanShare] = useState(false);
+  const [pendingAction, setPendingAction] = useState<"copy" | "share" | null>(
+    null,
+  );
+  const [message, setMessage] = useState("");
+  const linkInput = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    setCanShare(typeof navigator.share === "function");
+  }, []);
 
-   export default function About() {
-     return (
-       <div>
-         <Meta title={AppConfig.title} description={AppConfig.description} image={AppConfig.image}/>
+  async function copyLink() {
+    setPendingAction("copy");
+    setMessage("");
 
-        <Section yPadding="py-5">
-      <NavbarTwoColumns logo={<Logo xl />}>
-        {/*<li>
-          <Link href="https://youmacro.com">
-            GitHub
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard access is unavailable.");
+      }
+      await navigator.clipboard.writeText(WEBSITE_URL);
+      setMessage("Link copied. Ready to share!");
+    } catch {
+      linkInput.current?.focus();
+      linkInput.current?.select();
+      setMessage(
+        "Copy did not work here. The link is selected so you can copy it manually.",
+      );
+    } finally {
+      setPendingAction(null);
+    }
+  }
+
+  async function shareLink() {
+    setPendingAction("share");
+    setMessage("");
+
+    try {
+      await navigator.share({
+        title: "YouMacro — Video Downloader for Windows",
+        text: "A simple way to download one video, selected videos, or videos from a page.",
+        url: WEBSITE_URL,
+      });
+      setMessage("Shared. Thanks for spreading the word!");
+    } catch (error) {
+      if (error instanceof Error && error.name === "AbortError") {
+        setMessage("Sharing canceled. You can still copy the link.");
+      } else {
+        setMessage("Sharing did not open. Use Copy link to share it yourself.");
+      }
+    } finally {
+      setPendingAction(null);
+    }
+  }
+
+  return (
+    <div className="share-page">
+      <Head>
+        <title>Share YouMacro | Video Downloader for Windows</title>
+        <meta
+          name="description"
+          content="Share YouMacro with a friend. Copy the website link or open your device's share options to pass along this video downloader for Windows."
+        />
+        <link rel="canonical" href="https://youmacro.com/share/" />
+      </Head>
+
+      <header className="site-header container">
+        <Link className="brand" href="/" aria-label="YouMacro home">
+          <img
+            className="brand-icon"
+            src="/media/app-icon.png"
+            alt=""
+            width="40"
+            height="40"
+          />
+          <span>
+            YouMacro<span className="brand-dot">.</span>
+          </span>
+        </Link>
+        <nav aria-label="Main navigation">
+          <Link className="text-link" href="/">
+            ← Back to YouMacro
           </Link>
-        </li>
-        */}
-        <li>
-          <Link target="_blank" href="https://apps.microsoft.com/detail/9NLWCWNH9WHL?rtc=1&hl=en-us&gl=US">Microsoft Store</Link>
-        </li>
-      </NavbarTwoColumns>
-    </Section>
+        </nav>
+      </header>
 
-        <Section yPadding="pt-00 pb-5">
-            <h1 className="text-center"><b>Help us grow and improve YouMacro</b></h1>
-        </Section>
+      <main className="container">
+        <section className="share-panel" aria-labelledby="share-title">
+          <p className="eyebrow">A little word of mouth</p>
+          <h1 id="share-title">Share a good find.</h1>
+          <p>
+            Know someone who would enjoy YouMacro? Send them a link and let them
+            take a look.
+          </p>
 
-        <Section yPadding="pt-5 pb-5">
-            <h1 className="text-center">Tag videos or comments with <b>#youmacro</b> </h1>
-            <h1 className="text-center">Share your experiences on your socials </h1>
-            {/*}<div style={{ display: 'flex', justifyContent: 'center' }}>
-                <ul style={{ textAlign: 'left' }}>
-                  <li>(1) We will make sure tagged videos download successfully.</li>
-                  <li>(2) We will make sure similar videos download successfully.</li>
-                  <li>(3) We will add these tagged videos to a test suite.</li>
-                </ul>
-            </div>*/}
-        </Section>
-
-        {/*<Section yPadding="pt-5 pb-10">
-            <h1 align="center"> <b>Share your experiences on your socials</b> </h1>
-            }<div style={{ display: 'flex', justifyContent: 'center' }}>
-                <ul style={{ textAlign: 'left' }}>
-                  <li>(1) We will find it, read it and give it a thumbs up.</li>
-                  <li>(2) We will use these experiences to improve the app.</li>
-                  <li>(3) We made it super easy to post by pre-filling fields.</li>
-                  <li>(4) <b>Click one of the social buttons below to start. </b></li>
-                </ul>
-            </div>
-        </Section>*/}
-
-        <ShareButtons />
-
-
-
-
-
-       </div>
-     );
-   }
-
-
+          <label htmlFor="youmacro-link">Website link</label>
+          <input
+            ref={linkInput}
+            id="youmacro-link"
+            type="url"
+            value={WEBSITE_URL}
+            readOnly
+            onFocus={(event) => event.currentTarget.select()}
+            spellCheck={false}
+          />
+          <div className="share-actions">
+            <button
+              className="button button-primary"
+              type="button"
+              disabled={pendingAction !== null}
+              onClick={copyLink}
+            >
+              {pendingAction === "copy" ? "Copying…" : "Copy link"}
+            </button>
+            {canShare && (
+              <button
+                className="button button-secondary"
+                type="button"
+                disabled={pendingAction !== null}
+                onClick={shareLink}
+              >
+                {pendingAction === "share" ? "Opening…" : "Share options"}
+              </button>
+            )}
+          </div>
+          <p
+            className="share-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {message}
+          </p>
+          <footer className="share-footer-links">
+            <Link className="text-link" href="/">
+              Explore YouMacro
+            </Link>
+            <a className="text-link" href={LITE_STORE_URL}>
+              Get Lite
+            </a>
+            <a className="text-link" href={PRO_STORE_URL}>
+              Get Pro
+            </a>
+          </footer>
+        </section>
+      </main>
+    </div>
+  );
+}

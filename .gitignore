@@ -9,9 +9,12 @@
 # testing
 /coverage
 
-# next.js
+# next.js and compiler caches
 /.next
+/.swc
 /out
+*.tsbuildinfo
+.eslintcache
 
 # production
 /build
@@ -21,13 +24,17 @@
 *.pem
 Thumbs.db
 
-# debug
+# debug and local preview/build logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# dotenv local files
-.env*.local
+# Local environment values; keep credential-free example files trackable
+.env
+.env.*
+!.env.example
+!.env.*.example
 
 # local folder
 local
