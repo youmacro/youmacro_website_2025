@@ -1,5 +1,6 @@
 export type Theme = "light" | "dark";
 
+export const DEFAULT_THEME: Theme = "light";
 export const THEME_STORAGE_KEY = "youmacro-theme";
 export const THEME_COLORS = { light: "#fff9fc", dark: "#101015" };
 
@@ -13,7 +14,7 @@ export const THEME_INIT_SCRIPT = `
     var theme;
     try { theme = localStorage.getItem(${JSON.stringify(THEME_STORAGE_KEY)}); } catch (error) {}
     if (theme !== 'light' && theme !== 'dark') {
-      theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      theme = '${DEFAULT_THEME}';
     }
     document.documentElement.dataset.theme = theme;
     var meta = document.querySelector('meta[name="theme-color"]');

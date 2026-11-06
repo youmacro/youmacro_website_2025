@@ -5,11 +5,15 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useRef,
   useState,
 } from "react";
 
-import { isTheme, THEME_COLORS, THEME_STORAGE_KEY } from "../utils/theme";
+import {
+  DEFAULT_THEME,
+  isTheme,
+  THEME_COLORS,
+  THEME_STORAGE_KEY,
+} from "../utils/theme";
 import type { Theme } from "../utils/theme";
 
 const ThemeContext = createContext<{
@@ -18,8 +22,7 @@ const ThemeContext = createContext<{
 } | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
-  const preference = useRef<Theme | null>(null);
+  const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
 
   const applyTheme = useCallback((next: Theme) => {
     document.documentElement.dataset.theme = next;
@@ -27,30 +30,22 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: light)");
+    let initial = document.documentElement.dataset.theme;
     try {
       const saved = localStorage.getItem(THEME_STORAGE_KEY);
-      preference.current = isTheme(saved) ? saved : null;
+      initial = isTheme(saved) ? saved : DEFAULT_THEME;
     } catch {
-      // Theme switching still works when browser storage is unavailable.
+      // Retain the pre-paint theme when browser storage is unavailable.
     }
-    const initial = document.documentElement.dataset.theme;
-    const systemTheme = media.matches ? "light" : "dark";
-    applyTheme(isTheme(initial) ? initial : systemTheme);
+    applyTheme(isTheme(initial) ? initial : DEFAULT_THEME);
 
-    const followSystem = () => {
-      if (!preference.current) applyTheme(media.matches ? "light" : "dark");
-    };
     const syncPreference = (event: StorageEvent) => {
       if (event.key !== THEME_STORAGE_KEY && event.key !== null) return;
-      preference.current = isTheme(event.newValue) ? event.newValue : null;
-      applyTheme(preference.current || (media.matches ? "light" : "dark"));
+      applyTheme(isTheme(event.newValue) ? event.newValue : DEFAULT_THEME);
     };
 
-    media.addEventListener("change", followSystem);
     window.addEventListener("storage", syncPreference);
     return () => {
-      media.removeEventListener("change", followSystem);
       window.removeEventListener("storage", syncPreference);
     };
   }, [applyTheme]);
@@ -58,7 +53,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const toggleTheme = useCallback(() => {
     const next =
       document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    preference.current = next;
     applyTheme(next);
     try {
       localStorage.setItem(THEME_STORAGE_KEY, next);
