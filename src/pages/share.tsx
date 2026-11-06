@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
+import ThemeToggle from "../components/ThemeToggle";
+
 const WEBSITE_URL = "https://youmacro.com/";
 const LITE_STORE_URL = "https://apps.microsoft.com/detail/9NLWCWNH9WHL";
 const PRO_STORE_URL = "https://apps.microsoft.com/detail/9P2V0G3P86BD";
@@ -46,7 +48,7 @@ export default function SharePage() {
     try {
       await navigator.share({
         title: "YouMacro — Video Downloader for Windows",
-        text: "A simple way to download one video, selected videos, or videos from a page.",
+        text: "Download single videos, your selection, or whole-page batches with YouMacro for Windows.",
         url: WEBSITE_URL,
       });
       setMessage("Shared. Thanks for spreading the word!");
@@ -85,20 +87,23 @@ export default function SharePage() {
             YouMacro<span className="brand-dot">.</span>
           </span>
         </Link>
-        <nav aria-label="Main navigation">
-          <Link className="text-link" href="/">
-            ← Back to YouMacro
-          </Link>
-        </nav>
+        <div className="header-actions">
+          <nav aria-label="Main navigation">
+            <Link className="text-link" href="/">
+              ← Back to site
+            </Link>
+          </nav>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className="container">
         <section className="share-panel" aria-labelledby="share-title">
-          <p className="eyebrow">A little word of mouth</p>
-          <h1 id="share-title">Share a good find.</h1>
+          <p className="eyebrow">Good finds are better shared</p>
+          <h1 id="share-title">Pass it on.</h1>
           <p>
-            Know someone who would enjoy YouMacro? Send them a link and let them
-            take a look.
+            Know someone saving videos one by one? Share YouMacro for single,
+            selected, and whole-page batch downloads.
           </p>
 
           <label htmlFor="youmacro-link">Website link</label>

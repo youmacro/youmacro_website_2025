@@ -1,0 +1,267 @@
+.section {
+  padding-block: 24px 76px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.heading :global(.eyebrow) {
+  margin-bottom: 14px;
+}
+
+.heading h2 {
+  max-width: 680px;
+}
+
+.intro {
+  max-width: 425px;
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.scrollHint {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.scrollHint span {
+  font-size: 24px;
+  color: var(--pink);
+}
+
+.tableScroll {
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: var(--card);
+  scrollbar-color: var(--accent-border) var(--section-surface);
+}
+
+.tableScroll:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 5px;
+}
+
+.table {
+  width: 100%;
+  min-width: 1120px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.featureColumn {
+  width: 17%;
+}
+
+.productColumn {
+  width: 20.75%;
+}
+
+.table th,
+.table td {
+  padding: 23px 21px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  vertical-align: middle;
+  padding-block: 26px;
+  background: var(--section-surface);
+  color: var(--ink);
+  font-weight: 650;
+  font-size: 16px;
+}
+
+.table tbody th {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.table td {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.table td strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.table .youmacro {
+  background: var(--accent-soft);
+  border-inline: 1px solid var(--accent-border);
+  color: var(--ink);
+}
+
+.table thead .youmacro {
+  border-top: 3px solid var(--pink);
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.productName {
+  display: block;
+  font-size: 20px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.youmacro .productName {
+  color: var(--pink);
+  font-size: 23px;
+}
+
+.productNote {
+  display: block;
+  margin-top: 9px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.table td .parallelNumber {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--pink);
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.reference {
+  margin-left: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reference a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.reference a:hover {
+  text-decoration: underline;
+}
+
+.notes {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-top: 22px;
+  max-width: 1080px;
+}
+
+.sources {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.sources summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  min-height: 44px;
+  padding-block: 10px;
+}
+
+.sources ol {
+  margin: 8px 0 15px;
+  padding-left: 22px;
+  list-style: decimal;
+  columns: 2;
+  column-gap: 44px;
+}
+
+.sources li {
+  padding: 5px 0;
+  break-inside: avoid;
+}
+
+.sources a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sources a:hover {
+  color: var(--pink);
+}
+
+.sources p {
+  max-width: 1080px;
+}
+
+@media (max-width: 1230px) {
+  .scrollHint {
+    display: flex;
+  }
+}
+
+@media (max-width: 850px) {
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro {
+    max-width: 620px;
+  }
+
+  .section {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-top: 10px;
+    padding-bottom: 52px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .tableScroll {
+    border-radius: 12px;
+  }
+
+  .table {
+    min-width: 1120px;
+  }
+
+  .notes {
+    font-size: 12px;
+  }
+
+  .sources ol {
+    columns: 1;
+  }
+}

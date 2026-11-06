@@ -2,6 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
+import HeroVisual from "../components/HeroVisual";
+import DownloaderComparison from "../components/DownloaderComparison";
+import ThemeToggle from "../components/ThemeToggle";
+
 const STORE = {
   lite: "https://apps.microsoft.com/detail/9NLWCWNH9WHL",
   pro: "https://apps.microsoft.com/detail/9P2V0G3P86BD",
@@ -15,7 +19,7 @@ const screenshots = [
     label: "Browse & download",
     title: "A right-click is all it takes.",
     description:
-      "Choose a video, a selection, or every video on a page from the built-in browser.",
+      "Right-click a video link, highlight linked video titles, or use Download All to find video links across a supported page.",
     alt: "YouMacro browser with the Download This Link, Download All and Download Selected menu open.",
     note: "Original demonstration media library shown.",
   },
@@ -51,7 +55,7 @@ const screenshots = [
     label: "More control with Pro",
     title: "Your downloads. Your rules.",
     description:
-      "Set parallel downloads to help batches finish faster, choose your download folder, save audio only, and include available subtitles.",
+      "Set up to 999 simultaneous downloads across different sites, choose your download folder, save audio only, and include available subtitles. All 999 from one domain will likely be throttled. Actual concurrency depends on your PC, connection, and source websites.",
     alt: "Settings Pro tab with parallel download count, destination directory, audio and subtitle controls.",
     note: "These additional controls require YouMacro Pro.",
     pro: true,
@@ -111,6 +115,39 @@ function WindowsIcon() {
   );
 }
 
+function StepIcon({ step }: { step: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 48 48"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {step === 1 && (
+        <>
+          <rect x="7" y="9" width="34" height="30" rx="5" />
+          <path d="M7 18h34M13 14h1m5 0h1M21 25l9 5-9 5z" />
+        </>
+      )}
+      {step === 2 && (
+        <>
+          <path d="m13 8 23 18-12 2-5 12zM29 32l6 8" />
+          <path d="M32 9v6m6 4h6M35 14l5-5" />
+        </>
+      )}
+      {step === 3 && (
+        <>
+          <path d="M24 7v23m-9-9 9 9 9-9M9 31v9h30v-9" />
+          <path d="M16 40h16" />
+        </>
+      )}
+    </svg>
+  );
+}
+
 function StoreLink({
   edition,
   children,
@@ -162,22 +199,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>YouMacro — A simpler way to download videos</title>
+        <title>YouMacro — Bulk Video Downloader for Windows</title>
         <meta
           name="description"
-          content="Download one video, selected videos, or a whole page with YouMacro for Windows. Explore Lite and Pro, watch the app in action, and get it from the Microsoft Store."
+          content="Download a whole page, selected videos, or a single clip. YouMacro Pro supports up to 999 simultaneous downloads across different sites on Windows."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#fff7fb" />
         <link rel="canonical" href="https://youmacro.com/" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="YouMacro — A simpler way to download videos"
+          content="YouMacro — Bulk Video Downloader for Windows"
         />
         <meta
           property="og:description"
-          content="One video, a few favorites, or the whole page. Meet YouMacro Lite and Pro for Windows."
+          content="One video. Your selection. A whole page. Download hundreds of videos in parallel across different sites with YouMacro Pro for Windows."
         />
         <meta property="og:url" content="https://youmacro.com/" />
         <meta
@@ -209,30 +245,38 @@ export default function Home() {
           </a>
           <nav aria-label="Main navigation">
             <a href="#how-it-works">How it works</a>
-            <a href="#tour">Take a tour</a>
+            <a href="#compare">Compare</a>
+            <a href="#tour">Watch the demo</a>
             <a href="#editions">Lite &amp; Pro</a>
           </nav>
-          <a className="header-download" href="#editions">
-            Get YouMacro <Arrow />
-          </a>
+          <div className="header-actions">
+            <ThemeToggle />
+            <a className="header-download" href="#editions">
+              Get the app <Arrow diagonal />
+            </a>
+          </div>
         </header>
 
         <main id="main">
           <section className="hero container" aria-labelledby="hero-title">
             <div className="hero-copy">
               <p className="eyebrow">
-                <span className="tiny-dot" /> A little app for your good finds
+                <span className="tiny-dot" /> Bulk video downloads. Made for
+                Windows.
               </p>
               <h1 id="hero-title">
-                Find it.
+                Download
                 <br />
-                Save it.
+                videos.
                 <br />
-                <span>Make it yours.</span>
+                <span>
+                  In bulk<span className="hero-period">.</span>
+                </span>
               </h1>
               <p className="hero-description">
-                One video, a few favorites, or the whole page. YouMacro makes
-                downloading feel simple.
+                One video. Your selection. A whole page. Save them in a few
+                clicks, then download <strong>hundreds in parallel</strong>{" "}
+                across different sites with YouMacro Pro.
               </p>
               <div className="hero-actions">
                 <StoreLink edition="lite">Get YouMacro Lite</StoreLink>
@@ -240,52 +284,26 @@ export default function Home() {
                   <span className="play-small" aria-hidden="true">
                     ▶
                   </span>{" "}
-                  See it in action
+                  Watch the demo
                 </a>
               </div>
               <p className="hero-footnote">
-                Made for Windows. Available on the Microsoft Store.
+                Windows · Microsoft Store ·{" "}
+                <a href="#editions">Compare Lite &amp; Pro ↗</a>
               </p>
             </div>
-            <div className="hero-visual">
-              <div className="artwork-frame">
-                <img
-                  src="/media/youmacro-artwork.webp"
-                  alt="A pink cassette on a soft light blue and pink background"
-                  width="1200"
-                  height="675"
-                  fetchPriority="high"
-                />
-                <span className="artwork-caption">Keep the good stuff.</span>
-              </div>
-              <a
-                href="#features"
-                className="hero-app-preview"
-                aria-label="Explore screenshots of YouMacro"
-              >
-                <div className="preview-label">
-                  <span className="tiny-dot" /> A peek inside YouMacro{" "}
-                  <Arrow diagonal />
-                </div>
-                <img
-                  src="/media/screenshots/01-browser-menu.png"
-                  alt="YouMacro browser with its right-click download menu"
-                  width="1600"
-                  height="900"
-                />
-              </a>
-            </div>
+            <HeroVisual />
           </section>
           <div className="intro-strip container">
             <span>
-              <span aria-hidden="true">↳</span> Right-click to download
+              <span aria-hidden="true">↳</span> Single, selected, or all videos
             </span>
             <span>
-              <span aria-hidden="true">◎</span> Everything in one queue
+              <span aria-hidden="true">◎</span> Up to 999 across sites with Pro
             </span>
             <span>
-              <span aria-hidden="true">◈</span> Lite to start. Pro to
-              personalize.
+              <span aria-hidden="true">✳</span> Pause, resume &amp; manage your
+              queue
             </span>
           </div>
 
@@ -296,41 +314,116 @@ export default function Home() {
           >
             <div className="section-intro">
               <div>
-                <p className="eyebrow">A familiar flow</p>
-                <h2 id="workflow-title">From a find to a file.</h2>
+                <p className="eyebrow">01 / Three ways to download</p>
+                <h2 id="workflow-title">
+                  Download exactly
+                  <br />
+                  <span>what you want.</span>
+                </h2>
               </div>
               <p>
-                No juggling links and windows.
+                Browse a supported site inside YouMacro.
                 <br />
-                Browse, choose, and follow along in the app.
+                Right-click. Choose a mode. Start downloading.
               </p>
             </div>
-            <ol className="workflow-steps">
+            <ul className="workflow-steps">
               <li>
-                <span className="step-number">01</span>
-                <h3>Browse a little.</h3>
+                <div className="step-topline">
+                  <StepIcon step={1} />
+                  <span className="step-number">01</span>
+                </div>
+                <span className="download-mode">Download This Link</span>
+                <h3>Just that one video.</h3>
                 <p>
-                  Open a supported website in YouMacro’s built-in browser and
-                  find something you want to keep.
+                  Right-click a video link to save the clip you came for. Keep a
+                  tutorial, a reference, or your next favorite without adding
+                  the rest of the page.
                 </p>
+                <a
+                  className="mode-demo"
+                  href="#tour"
+                  onClick={() => seek(chapters[0]!)}
+                >
+                  Watch the single-video demo <Arrow diagonal />
+                </a>
               </li>
               <li>
-                <span className="step-number">02</span>
-                <h3>Choose what to save.</h3>
+                <div className="step-topline">
+                  <StepIcon step={2} />
+                  <span className="step-number">02</span>
+                </div>
+                <span className="download-mode">Download Selected</span>
+                <h3>Your picks. One batch.</h3>
                 <p>
-                  Right-click to download a single video, videos near selected
-                  text, or every video on the page.
+                  Highlight the linked video titles you want, then choose
+                  Download Selected. Queue your picks together without copying
+                  each link individually.
                 </p>
+                <a
+                  className="mode-demo"
+                  href="#tour"
+                  onClick={() => seek(chapters[1]!)}
+                >
+                  Watch selected downloads <Arrow diagonal />
+                </a>
               </li>
               <li>
-                <span className="step-number">03</span>
-                <h3>Watch it come together.</h3>
+                <div className="step-topline">
+                  <StepIcon step={3} />
+                  <span className="step-number">03</span>
+                </div>
+                <span className="download-mode">Download All</span>
+                <h3>Grab the whole page.</h3>
                 <p>
-                  Switch to Downloads to see your new items, check progress, and
-                  manage your queue.
+                  Find and queue video links across a supported page with
+                  Download All. Save a batch of discoveries without the
+                  copy-and-paste routine.
                 </p>
+                <a
+                  className="mode-demo"
+                  href="#tour"
+                  onClick={() => seek(chapters[2]!)}
+                >
+                  Watch whole-page downloads <Arrow diagonal />
+                </a>
               </li>
-            </ol>
+            </ul>
+            <aside
+              className="parallel-callout"
+              aria-labelledby="parallel-title"
+            >
+              <div className="parallel-stat">
+                <strong>
+                  <span>Up to</span>999
+                </strong>
+                <span>
+                  simultaneous downloads
+                  <br />
+                  across different sites
+                  <br />
+                  with YouMacro Pro
+                </span>
+              </div>
+              <div className="parallel-copy">
+                <h3 id="parallel-title">Hundreds at once. One queue.</h3>
+                <p>
+                  Stop waiting for one video to finish before the next starts.
+                  Pro lets you set up to 999 simultaneous downloads across
+                  different sites. Search, pause, and resume your downloads from
+                  one place.
+                </p>
+                <p className="parallel-note">
+                  If all 999 downloads come from the same domain, that website
+                  will likely throttle them. Actual concurrency and speed depend
+                  on your PC, connection, and source websites. YouMacro reduces
+                  new starts when a site throttles downloads.
+                </p>
+              </div>
+              <a className="button button-pro" href="#editions">
+                Explore Pro <Arrow diagonal />
+              </a>
+            </aside>
           </section>
 
           <section
@@ -341,8 +434,10 @@ export default function Home() {
             <div className="container">
               <div className="section-intro">
                 <div>
-                  <p className="eyebrow">The real app, in motion</p>
-                  <h2 id="tour-title">Take a one-minute tour.</h2>
+                  <p className="eyebrow">02 / Watch real downloads</p>
+                  <h2 id="tour-title">
+                    See all three modes.<span>In just 60 seconds.</span>
+                  </h2>
                 </div>
                 <div
                   className="edition-switch"
@@ -371,8 +466,8 @@ export default function Home() {
                   </span>
                   <h3>
                     {edition === "lite"
-                      ? "Your everyday downloading companion."
-                      : "A little more power. A lot more control."}
+                      ? "Batch downloads, made simple."
+                      : "Bigger batches. More control."}
                   </h3>
                   <p>
                     Follow a continuous walkthrough: download one video, a
@@ -382,7 +477,7 @@ export default function Home() {
                   <p className="tour-extra">
                     {edition === "lite"
                       ? "The tour also previews the extra controls available with Pro."
-                      : "See how Pro lets you choose your download folder and set parallel downloads, which can help batches finish faster."}
+                      : "See where to set your parallel-download limit and choose your download folder. Pro supports up to 999 simultaneous downloads across different sites. All 999 from one domain will likely be throttled."}
                   </p>
                   <div
                     className="chapter-links"
@@ -464,12 +559,17 @@ export default function Home() {
           >
             <div className="section-intro">
               <div>
-                <p className="eyebrow">A place for everything</p>
-                <h2 id="gallery-title">Get to know your workspace.</h2>
+                <p className="eyebrow">03 / A closer look</p>
+                <h2 id="gallery-title">
+                  More downloads.
+                  <br />
+                  <span>Less busywork.</span>
+                </h2>
               </div>
               <p>
-                Thoughtful little controls.
-                <br />A simpler everyday routine.
+                Search, pause, resume, and save your queue.
+                <br />
+                Keep even a big batch easy to manage.
               </p>
             </div>
             <div className="gallery-layout">
@@ -530,6 +630,8 @@ export default function Home() {
             </div>
           </section>
 
+          <DownloaderComparison />
+
           <section
             className="editions-section"
             id="editions"
@@ -537,10 +639,14 @@ export default function Home() {
           >
             <div className="container">
               <div className="section-heading-center">
-                <p className="eyebrow">Find your fit</p>
-                <h2 id="editions-title">Start simple. Make it your own.</h2>
+                <p className="eyebrow">Choose your download capacity</p>
+                <h2 id="editions-title">
+                  A few at once?<span> Or hundreds?</span>
+                </h2>
                 <p>
-                  The same familiar app, with a little extra freedom in Pro.
+                  Both editions download single videos, selected videos, and
+                  whole-page batches. Pro gives you more parallel capacity and
+                  output options.
                 </p>
               </div>
               <div className="edition-cards">
@@ -555,11 +661,12 @@ export default function Home() {
                   </div>
                   <h3>YouMacro Lite</h3>
                   <p className="edition-description">
-                    A simple place to start saving your favorites.
+                    Everyday batch downloading, with up to 5 downloads running
+                    at once.
                   </p>
                   <ul>
                     <li>Download single, selected, or all videos</li>
-                    <li>Keep downloads together in one queue</li>
+                    <li>Run up to 5 simultaneous downloads</li>
                     <li>Choose your preferred resolution and theme</li>
                     <li>Customize shortcuts and explore built-in tutorials</li>
                   </ul>
@@ -573,7 +680,7 @@ export default function Home() {
                 <article className="edition-card pro-card">
                   <div className="edition-card-top">
                     <span className="edition-label pro">
-                      MORE WAYS TO MAKE IT YOURS
+                      FOR THE POWER DOWNLOADERS
                     </span>
                     <span className="edition-symbol" aria-hidden="true">
                       ✳
@@ -581,10 +688,13 @@ export default function Home() {
                   </div>
                   <h3>YouMacro Pro</h3>
                   <p className="edition-description">
-                    Everything in Lite, with more control over every download.
+                    Everything in Lite, with a configurable limit of up to 999
+                    simultaneous downloads across different sites.
                   </p>
                   <ul>
-                    <li>Set the number of parallel downloads</li>
+                    <li>
+                      Download hundreds in parallel across different sites
+                    </li>
                     <li>Choose the folder your downloads go to</li>
                     <li>Download just the audio when you want it</li>
                     <li>Include available subtitles and translations</li>
@@ -598,8 +708,10 @@ export default function Home() {
                 </article>
               </div>
               <p className="edition-context">
-                More parallel downloads can speed up batches. Actual speed
-                depends on your connection and the source website.
+                These are concurrency limits, not speed guarantees. Actual
+                concurrency and speed depend on your PC, connection, and the
+                source websites. All 999 downloads from the same domain will
+                likely be throttled by that website.
               </p>
             </div>
           </section>
@@ -609,8 +721,12 @@ export default function Home() {
             aria-labelledby="faq-title"
           >
             <div>
-              <p className="eyebrow">A few good questions</p>
-              <h2 id="faq-title">Before you get started.</h2>
+              <p className="eyebrow">The need-to-knows</p>
+              <h2 id="faq-title">
+                Good questions.
+                <br />
+                <span>Quick answers.</span>
+              </h2>
               <p>
                 There’s more help inside the app.
                 <br />
@@ -623,21 +739,41 @@ export default function Home() {
                   How do Lite and Pro differ?<span aria-hidden="true">+</span>
                 </summary>
                 <p>
-                  Both editions include the browser, download queue, Lite
-                  settings, keyboard shortcuts, and tutorials. Pro adds controls
-                  for parallel downloads, your destination folder, audio-only
-                  downloads, and available subtitles and translations.
+                  Both editions include all three download modes, the browser,
+                  download queue, shortcuts, and tutorials. Lite runs up to 5
+                  downloads at once. Pro lets you set up to 999 simultaneous
+                  downloads across different sites, choose your destination
+                  folder, save audio only, and include available subtitles and
+                  translations. A website will likely throttle downloads if all
+                  999 come from the same domain.
                 </p>
               </details>
               <details>
                 <summary>
-                  Can I download several videos at once?
+                  Can I really download hundreds in parallel?
                   <span aria-hidden="true">+</span>
                 </summary>
                 <p>
-                  Yes. Use Download Selected for videos near selected text, or
-                  Download All to find video links across the page. With Pro,
-                  you can also set how many downloads run in parallel.
+                  Yes. YouMacro Pro accepts a simultaneous-download setting of
+                  up to 999 across different sites. If all 999 downloads come
+                  from the same domain, that website will likely throttle them.
+                  The number actually running depends on your PC, connection,
+                  available jobs, and source websites. YouMacro reduces new
+                  starts when a site throttles downloads. Lite supports up to 5
+                  simultaneous downloads.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  How do whole-page and selected downloads work?
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Download All discovers video links across the current page,
+                  including scrollable sections. Pagination or “load more”
+                  buttons may need your input. For a smaller batch, highlight
+                  the linked video titles you want and choose Download Selected.
+                  Available videos depend on the source website.
                 </p>
               </details>
               <details>
@@ -666,14 +802,16 @@ export default function Home() {
 
           <section className="closing-section container">
             <div>
-              <p className="eyebrow">Your next good find is out there</p>
+              <p className="eyebrow">
+                One video. Your selection. The whole page.
+              </p>
               <h2>
-                Bring it home
+                Your videos.
                 <br />
-                with YouMacro.
+                <span>Downloaded together.</span>
               </h2>
               <a className="button button-primary" href="#editions">
-                Choose your edition <Arrow />
+                Get YouMacro <Arrow diagonal />
               </a>
             </div>
             <img

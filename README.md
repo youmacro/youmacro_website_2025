@@ -1,14 +1,23 @@
 # YouMacro website
 
-The public website for YouMacro Lite and YouMacro Pro, built with Next.js 14, React 18, TypeScript and Tailwind CSS. This refresh uses the approved pink and light-blue cassette artwork, current app screenshots and narrated walkthroughs. It has not been deployed.
+The public website for YouMacro Lite and YouMacro Pro, built with Next.js 14, React 18, TypeScript and Tailwind CSS. The design includes light and dark themes, oversized typography, pink and icy-blue accents, and a product hero featuring app screenshots and download capacity. Approved cassette artwork and narrated walkthroughs are preserved. It has not been deployed.
 
 ## Pages and content
 
-- `/`: introduction, three-step download workflow, switchable Lite/Pro video tour, screenshot gallery with an enlarged view, edition comparison, FAQs and Store links.
+- `/`: bulk-download introduction, single/selected/whole-page download modes, Pro parallel-download capacity, switchable Lite/Pro video tour, screenshot gallery with an enlarged view, downloader comparison, edition comparison, FAQs and Store links.
 - `/share/`: copy the website link or open the device's native share options, with a manual-copy fallback.
-- Existing links to `#top`, `#how-it-works`, `#features`, `#privacy` and `#share` remain supported. New sections include `#tour` and `#editions`.
+- Both pages include a header theme toggle. First visits follow the device theme; manual choices are saved locally as `youmacro-theme`. The saved theme applies before the page paints and persists across navigation. Theme switching also works when browser storage is unavailable.
+- Existing links to `#top`, `#how-it-works`, `#features`, `#privacy` and `#share` remain supported. Additional sections include `#tour`, `#compare` and `#editions`.
 
-The main page is `src/pages/index.tsx`; the share page is `src/pages/share.tsx`; shared styling is in `src/styles/global.css`. Keep the edition comparison accurate: custom destination folders, parallel-download limits, audio-only output and available subtitle options belong to Pro. More parallel downloads can help batches finish faster; video resolution is a preference subject to source availability.
+The main page is `src/pages/index.tsx`; the share page is `src/pages/share.tsx`; shared styling is in `src/styles/global.css`. The product hero lives in `src/components/HeroVisual.tsx` with scoped styles in `HeroVisual.module.css`; the sourced competitor table lives in `src/components/DownloaderComparison.tsx`. The layout adapts to mobile, includes keyboard focus states, and respects reduced-motion preferences. Keep the edition comparison accurate: custom destination folders, adjustable parallel-download limits, audio-only output and available subtitle options belong to Pro. More parallel downloads can help batches finish faster; video resolution is a preference subject to source availability.
+
+## Download claims and comparison
+
+The November 6, 2026 content update was checked against `E:\src\youmacro_desktop`. Lite is limited to 5 simultaneous downloads (`src/settings/coresettings.py`). Pro accepts a configured maximum of 999 (`src/ui/settings/forms.py` and `src/ui/settings/store.py`), and the production scheduler uses that limit (`src/ui/wdlqueue/wdlqcontroller.py`). This is a configurable capacity across different sites, not a measured throughput benchmark or a guarantee of 999 active transfers. A website will likely throttle downloads if all 999 come from the same domain. Actual concurrency depends on available jobs, the computer, connection, and sources; throttling can reduce new starts.
+
+Download Selected uses highlighted linked video titles, not arbitrary thumbnail selection. Download All discovers video links across the current page and scrollable sections; pagination and load-more controls may need user action. The app's `src/ui/tutorials/pages/all-videos.html` documents these workflows.
+
+The comparison covers three established Windows GUI applications: 4K Video Downloader Plus, JDownloader 2, and Internet Download Manager (IDM), using linked publisher documentation reviewed November 6, 2026. It describes workflows and documented settings, not a popularity ranking or speed benchmark. Preserve the distinction between simultaneous files and connections within one file; JDownloader's advanced Domain Rules can exceed its standard global setting. IDM's Scheduler controls simultaneous queued files; it is not an automatic streaming-video page or playlist scanner. IDM can select direct file links, which differs from discovering videos inside web players. Recheck vendor documentation before updating competitor claims.
 
 ## Local development and checks
 

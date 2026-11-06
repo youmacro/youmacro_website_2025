@@ -1,7 +1,9 @@
-import type { AppProps } from 'next/app';
-import Script from 'next/script';
+import type { AppProps } from "next/app";
+import Script from "next/script";
 
-import '../styles/global.css';
+import { ThemeProvider } from "../components/ThemeProvider";
+
+import "../styles/global.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
@@ -18,7 +20,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         gtag('config', 'G-XDS0CF3W2R');
       `}
     </Script>
-    <Component {...pageProps} />
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
   </>
 );
 
